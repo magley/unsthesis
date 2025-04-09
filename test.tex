@@ -1,0 +1,35 @@
+\documentclass{umb_thesis}
+
+\renewcommand{\figurecaptionname}{My Figure}
+\renewcommand{\listingcaptionname}{My Listing}
+\renewcommand{\tablecaptionname}{My Table}
+\renewcommand{\theoremcaptionname}{My Theorem}
+\renewcommand{\contentscaptionname}{My Contents}
+
+\begin{document}
+
+\cleardoublepage
+\tableofcontents
+
+\cleardoublepage
+\section{Introduction}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\subsection{Sub-Introduction}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+\\
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+\begin{theorem}
+For every real number $x$, $x > x - 1$.
+\end{theorem}
+
+See also listing \ref{lst:print}.
+
+\begin{lstlisting}[language=Python, caption=print in Python, label={lst:print}]
+def f(x):
+    print(x)
+\end{lstlisting}
+
+\end{document}
