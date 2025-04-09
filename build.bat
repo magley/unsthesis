@@ -1,11 +1,10 @@
-pdflatex -output-directory out test.tex
+pdflatex -output-directory out main.tex
+copy    refs.bib out\
+cd      out
+bibtex  main
+del     refs.bib
+cd      ..
+pdflatex -output-directory out main.tex
+pdflatex -output-directory out main.tex
 
-
-@REM pdflatex -output-directory out test.tex
-@REM copy    refs.bib out\
-@REM cd      out
-@REM bibtex  test
-@REM del     refs.bib
-@REM cd      ..
-@REM pdflatex -output-directory out test.tex
-@REM pdflatex -output-directory out test.tex
+powershell.exe [console]::beep(500,600)

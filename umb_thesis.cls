@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{pastelcv}[2019/12/08 A Pastel CV Template with some infographics]
+\ProvidesClass{umb_thesis}[My thesis template]
 \LoadClass[11pt, twoside]{article}
 
 
@@ -20,8 +20,7 @@
 \providecommand{\tablecaptionname}{Table}
 \providecommand{\theoremcaptionname}{Theorem}
 \providecommand{\contentscaptionname}{Contents}
-
-
+\providecommand{\literaturecaptionname}{Literature}
 
 % Support for Serbian Cyrillic through UTF-8.
 
@@ -93,13 +92,13 @@
 \usepackage{multirow}
 \usepackage{gensymb}
 
-
 \usepackage[figurename=\figurecaptionname]{caption}
 \renewcommand{\lstlistingname}{\listingcaptionname}
 \captionsetup[table]{name=\tablecaptionname}
 \newtheorem{theorem}{\theoremcaptionname}
-
-% \contentsname is set by babel after \begin{document}
 \AtBeginDocument{
     \renewcommand{\contentsname}{\contentscaptionname}
+    \renewcommand{\refname}{\literaturecaptionname}
 }
+
+\setlength\parindent{14pt}
