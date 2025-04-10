@@ -4,13 +4,9 @@
 
 % Specify `nocolor` to render the document in black and white,
 % suitable for paper print.
-\DeclareOption{nocolor}{\def\usecolor{false}}
+\DeclareOption{nocolor}{\newcommand{\nocolorflag}{}}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ProcessOptions\relax
-
-\ifx\usecolor\undefined
-  \def\usecolor{true}
-\fi
 
 % Captions for figures and enviroments.
 % You may override these like so:
@@ -54,7 +50,21 @@
 \usepackage{emptypage} % Remove page numbering from \cleardoublepage
 \usepackage[percent]{overpic} % Add text over PDFs.
 
-\ifdefined\usecolor
+\ifdefined\nocolorflag
+
+\lstdefinestyle{myStyle}{
+    belowcaptionskip=1\baselineskip,
+    breaklines=true,
+    numbers=none,
+    basicstyle=\footnotesize\ttfamily,
+    frame=single
+    % Exclude color-related settings
+    }
+    \hypersetup{
+        hidelinks
+        % Exclude color-related settings
+    }
+\else
     \lstdefinestyle{myStyle}{
         belowcaptionskip=1\baselineskip,
         breaklines=true,
@@ -72,19 +82,6 @@
         citecolor=blue,
         filecolor=blue,
         urlcolor=blue
-    }
-\else        
-    \lstdefinestyle{myStyle}{
-        belowcaptionskip=1\baselineskip,
-        breaklines=true,
-        numbers=none,
-        basicstyle=\footnotesize\ttfamily,
-        frame=single
-        % Exclude color-related settings
-    }
-    \hypersetup{
-        hidelinks
-        % Exclude color-related settings
     }
 \fi
 
