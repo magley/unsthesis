@@ -1,5 +1,9 @@
 \documentclass{umb_thesis}
 
+% Specify which folder are all the graphics in. 
+\graphicspath{ {./res/} }
+
+% Specify the caption for all the items and environments.
 \renewcommand{\figurecaptionname}{My Figure}
 \renewcommand{\listingcaptionname}{My Listing}
 \renewcommand{\tablecaptionname}{My Table}
@@ -7,87 +11,24 @@
 \renewcommand{\contentscaptionname}{My Contents}
 \renewcommand{\literaturecaptionname}{My Literature}
 
-\graphicspath{ {./res/} }
-
 \begin{document}
+
+% Each section is in its own .tex file to improve readability.
+% \cleardoublepage is used to add a blank page so that the proceeding
+% chapter starts on the odd page (i.e. on the "left" page). Doing this
+% makes sense only if you're doing `twoside` documents, which you should
+% because it saves paper. 
 
 \cleardoublepage
 \tableofcontents
 
 \cleardoublepage
-\section{Introduction} \label{01_introduction}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\cite{maggiore2012virtual}
-\cite{baumgarte1983new}
-
-\subsection{Sub-Introduction}
-\textit{Lorem}\footnote{Lorem means lorem} ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-\\
-Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\begin{theorem}
-For every real number $x$, $x > x - 1$.
-\end{theorem}
-
-See also listing \ref{lst:print}. And also see section \ref{01_introduction}.
-
-\begin{lstlisting}[language=C++, caption={Code listing. If you disable color, it will be all in black and white.}, label={lst:print}]
-#include <asyncbufio.h>
-
-void main() {
-    AsyncBuffer* b = new AsyncBuffer(
-        500 * sizeof(char), 
-        NULL, 
-        2
-    );
-    return 0;
-}
-\end{lstlisting}
-
-See also figure \ref{fig:satCirclePolygon}.
-This is ,,an'' aligned equation:
-
-\begin{align}
-    \begin{split}
-        \vec{v} = {} & \vec{x}
-    \end{split}                                    \\
-    \begin{split}
-        \vec{a} ={} & \vec{v} = \vec{x}
-    \end{split} \\
-    \vec{a} ={} & \frac{\vec{F}}{m}
-\end{align}
-
-Here's a list:
-
-\begin{itemize}
-    \item Item $1$
-    \item Item $1^2 + 1$
-\end{itemize}
-
-Here's a regular equation:
-
-\begin{equation}
-    y = ax + b
-\end{equation}
-
-\begin{figure}
-    \centering
-    \begin{overpic}[width=0.5\textwidth]{res/satCirclePolygon.pdf} % ,grid,tics=10
-        \put (16,53) {$p_1$}
-        \put (39,52) {$l$}
-        \put (56,41) {$p_k$}
-        \put (75,23) {$p_2$}
-    \end{overpic}
-    \caption{Vector graphics made in external tool (drawio), saved as .pdf.
-    Labels over the image are defined in the tex document.
-    That way, readers can copy the text and the text is vectorized. }
-    \label{fig:satCirclePolygon}
-\end{figure}
+\include{01_introduction}
 
 \cleardoublepage
-\bibliographystyle{unsrt}
-\bibliography{refs}
+\include{02_math_theory}
+
+\cleardoublepage
+\include{03_literature}
 
 \end{document}
