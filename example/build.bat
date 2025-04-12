@@ -7,4 +7,5 @@ cd      ..
 pdflatex -output-directory out main.tex
 pdflatex -output-directory out main.tex
 
-powershell.exe [console]::beep(500,600)
+
+% powershell.exe [console]::beep(500,600)
