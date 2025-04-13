@@ -56,6 +56,7 @@
 \usepackage[numbib]{tocbibind} % Make "bibliography" numbered like a \section for TOC.
 \usepackage{emptypage}         % Remove page numbering from \cleardoublepage.
 \usepackage[percent]{overpic}  % Allow writing text over PDFs used as figures.
+\usepackage{longtable}         % Large tables can be split between multiple pages
 \usepackage{float}
 \usepackage{multirow}
 \usepackage{gensymb}
